@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./Home.scss";
+
 export default function Home() {
-  return <div>Je suis la page home</div>;
+  return <div className="home">Je suis la page home</div>;
 }

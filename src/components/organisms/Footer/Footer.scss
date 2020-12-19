@@ -1,0 +1,15 @@
+@import "../../_settings/variables";
+
+.footer {
+  width: 100%;
+  padding: 5%;
+  display: flex;
+  justify-content: center;
+  background-color: $anthracite-grey;
+  color: $off-white;
+
+  &_copyright {
+    text-transform: uppercase;
+    font-size: 1rem;
+  }
+}
