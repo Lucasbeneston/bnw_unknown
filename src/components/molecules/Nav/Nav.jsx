@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import "./Nav.scss";
+import Instagram from "../../atoms/SVGR/Instagram";
 
 export default function Nav() {
   const [isFixed, setIsFixed] = useState(false);
@@ -25,17 +26,23 @@ export default function Nav() {
 
   return (
     <nav className={`nav ${isFixed ? "fixed" : ""}`}>
+      <a
+        className="nav_instagram"
+        href="https://www.instagram.com/bnw_unknown/"
+      >
+        <Instagram />
+      </a>
       <Link className={`nav_logo ${isFixed ? "fixed" : ""}`} to="/">
         bnw_unknown.
       </Link>
       <div className="nav_containerlinks">
-        <Link className="nav_containerlinks_link" to="/">
+        <Link className="nav_containerlinks_link" to="/cities">
           cities.
         </Link>
-        <Link className="nav_containerlinks_link" to="/">
+        <Link className="nav_containerlinks_link" to="/portraits">
           portraits.
         </Link>
-        <Link className="nav_containerlinks_link" to="/">
+        <Link className="nav_containerlinks_link" to="/about">
           about.
         </Link>
       </div>
