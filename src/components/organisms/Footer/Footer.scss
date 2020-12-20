@@ -1,4 +1,5 @@
 @import "../../_settings/variables";
+@import "../../_settings/mixins";
 
 .footer {
   width: 100%;
@@ -8,8 +9,13 @@
   background-color: $anthracite-grey;
   color: $off-white;
 
+  @include media(tablet) {
+    height: 50px;
+    padding: 0;
+    align-items: center;
+  }
+
   &_copyright {
-    text-transform: uppercase;
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }

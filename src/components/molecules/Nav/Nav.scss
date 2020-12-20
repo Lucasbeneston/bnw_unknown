@@ -1,4 +1,5 @@
 @import "../../_settings/variables";
+@import "../../_settings/mixins";
 
 .nav {
   width: 100%;
@@ -11,6 +12,10 @@
   position: relative;
   z-index: 100;
 
+  @include media(laptop) {
+    padding: 0 10%;
+  }
+
   &.fixed {
     position: fixed;
     top: 0;
@@ -19,17 +24,20 @@
   &_logo {
     max-width: 0;
     padding: 0;
-    font-size: 0.8rem;
+    font-size: 1rem;
     overflow: hidden;
-    transition: all 0.5s;
+    transition: all 0.25s;
 
     &.fixed {
       padding: 0 5%;
       max-width: fit-content;
-      text-transform: uppercase;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       font-weight: lighter;
-      transition: all 0.5s;
+      transition: all 0.25s;
+
+      @include media(laptop) {
+        padding: 0 5% 0 0;
+      }
     }
   }
 
@@ -40,10 +48,18 @@
     height: 100%;
     flex: 1;
 
+    @include media(laptop) {
+      justify-content: flex-end;
+    }
+
     &_link {
-      text-transform: uppercase;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       font-weight: lighter;
+
+      @include media(laptop) {
+        margin-left: 50px;
+        font-size: 1.4rem;
+      }
     }
   }
 }

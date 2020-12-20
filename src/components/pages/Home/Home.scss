@@ -1,24 +1,43 @@
 @import "../../_settings/variables";
+@import "../../_settings/mixins";
 
 .home {
   width: 100%;
   padding: 5%;
-  min-height: 100vh;
+  min-height: 80vh;
   background-color: $off-white;
   position: relative;
+
+  @include media(laptop) {
+    padding: 5% 10%;
+  }
 
   &_container {
     column-count: 2;
     column-gap: 10px;
+
+    @include media(tablet) {
+      column-count: 3;
+      column-gap: 20px;
+    }
+
+    @include media(desktop) {
+      column-count: 4;
+    }
 
     & figure {
       margin: 0;
       margin-bottom: 10px;
       cursor: pointer;
 
+      @include media(tablet) {
+        margin-bottom: 20px;
+      }
+
       & > img {
         grid-row: 1 / -1;
         grid-column: 1;
+        width: 100%;
       }
     }
   }
@@ -40,6 +59,14 @@
       align-items: center;
       justify-content: center;
       z-index: 101;
+
+      @include media(tablet) {
+        padding: 25%;
+      }
+
+      & img {
+        width: 100%;
+      }
     }
 
     &_informations {
@@ -49,6 +76,29 @@
       color: $off-white;
       margin-top: 10px;
       line-height: 1.75rem;
+
+      &_title {
+        font-size: 1.4rem;
+        font-style: italic;
+
+        & span {
+          font-size: 1.2rem;
+          font-weight: lighter;
+        }
+      }
+
+      &_location,
+      &_camera {
+        font-weight: lighter;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & svg {
+          height: 1.2rem;
+          margin-right: 5px;
+        }
+      }
     }
 
     &_closeButton {

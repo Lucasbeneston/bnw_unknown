@@ -26,17 +26,17 @@ export default function Nav() {
   return (
     <nav className={`nav ${isFixed ? "fixed" : ""}`}>
       <Link className={`nav_logo ${isFixed ? "fixed" : ""}`} to="/">
-        Bnw_unknown.
+        bnw_unknown.
       </Link>
       <div className="nav_containerlinks">
         <Link className="nav_containerlinks_link" to="/">
-          Cities
+          cities.
         </Link>
         <Link className="nav_containerlinks_link" to="/">
-          Portraits
+          portraits.
         </Link>
         <Link className="nav_containerlinks_link" to="/">
-          About
+          about.
         </Link>
       </div>
     </nav>

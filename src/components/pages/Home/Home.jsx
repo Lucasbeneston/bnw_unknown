@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import allPictures from "../../../data/allPictures";
 
 import "./Home.scss";
+import Camera from "../../atoms/SVGR/Camera";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,6 +12,7 @@ export default function Home() {
     name: null,
     location: null,
     date: null,
+    camera: null,
     index: 0,
   });
 
@@ -24,9 +26,16 @@ export default function Home() {
           />
         </figure>
         <div className="home_pictureSelected_informations">
-          <h2>{selectedImage.name}</h2>
-          <h3>{selectedImage.location}</h3>
-          <h3>{selectedImage.date}</h3>
+          <h2 className="home_pictureSelected_informations_title">
+            {selectedImage.name}, <span>{selectedImage.date}</span>
+          </h2>
+          <h3 className="home_pictureSelected_informations_location">
+            {selectedImage.location}
+          </h3>
+          <h4 className="home_pictureSelected_informations_camera">
+            <Camera />
+            {selectedImage.camera}
+          </h4>
         </div>
         <button
           className="home_pictureSelected_closeButton"
@@ -47,6 +56,7 @@ export default function Home() {
                 name: picture.name,
                 location: picture.location,
                 date: picture.date,
+                camera: picture.camera,
                 index,
               });
               setIsOpen(!isOpen);
@@ -57,6 +67,7 @@ export default function Home() {
                 name: picture.name,
                 location: picture.location,
                 date: picture.date,
+                camera: picture.camera,
                 index,
               });
               setIsOpen(!isOpen);
