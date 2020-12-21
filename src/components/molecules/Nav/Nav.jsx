@@ -74,7 +74,8 @@ export default function Nav() {
           setDarkroom(!darkroom);
         }}
       >
-        <h2>darkroom_experience.</h2> <FilmRoll />
+        <h2>darkroom_experience.</h2>
+        <FilmRoll />
       </div>
     </nav>
   );

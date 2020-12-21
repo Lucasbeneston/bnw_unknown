@@ -1,0 +1,70 @@
+.about {
+  padding: 5%;
+  width: 100%;
+
+  &_illustration {
+    width: 100%;
+    margin-bottom: 40px;
+
+    & img {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    &_citation {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      & q {
+        font-size: 1.4rem;
+        font-style: italic;
+      }
+    }
+  }
+
+  &_informations {
+    width: 100%;
+    margin-bottom: 40px;
+
+    &_title {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    &_paragraph {
+      font-size: 1.4rem;
+      font-weight: 300;
+      line-height: 2rem;
+    }
+  }
+
+  &_camera {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
+
+    &_informations {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      &_name {
+        font-size: 1.4rem;
+        font-weight: 600;
+      }
+
+      &_date {
+        font-size: 1.2rem;
+      }
+
+      & img {
+        width: 100px;
+      }
+    }
+  }
+}

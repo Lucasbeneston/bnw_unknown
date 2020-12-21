@@ -6,8 +6,9 @@
   padding: 5%;
   display: flex;
   justify-content: center;
-  background-color: $anthracite-grey;
+  background-color: black;
   color: $off-white;
+  border-top: 2px solid $anthracite-grey;
 
   @include media(tablet) {
     height: 50px;
