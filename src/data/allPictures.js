@@ -79,7 +79,7 @@ const allPictures = [
   },
   {
     src: "test12.jpeg",
-    name: "The last one",
+    name: "America",
     location: "Intrepid Sea, Air & Space Museum (New York, USA)",
     date: "Dec. 2019",
     camera: "Canon T70",

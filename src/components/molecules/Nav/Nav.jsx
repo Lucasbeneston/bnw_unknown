@@ -1,8 +1,10 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Instagram from "../../atoms/SVGR/Instagram";
+import FilmRoll from "../../atoms/SVGR/FilmRoll";
 
 import "./Nav.scss";
-import Instagram from "../../atoms/SVGR/Instagram";
 
 export default function Nav() {
   const [isFixed, setIsFixed] = useState(false);
@@ -45,6 +47,17 @@ export default function Nav() {
         <Link className="nav_containerlinks_link" to="/about">
           about.
         </Link>
+      </div>
+      <div
+        className="nav_negative"
+        onClick={() => {
+          console.log("Darkroom !");
+        }}
+        onKeyDown={() => {
+          console.log("Darkroom !");
+        }}
+      >
+        <h2>darkroom_experience.</h2> <FilmRoll />
       </div>
     </nav>
   );

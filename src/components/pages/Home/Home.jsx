@@ -44,7 +44,7 @@ export default function Home() {
           }}
           type="button"
         >
-          Fermer
+          Close
         </button>
       </div>
       <div className="home_container">
@@ -72,7 +72,7 @@ export default function Home() {
               });
               setIsOpen(!isOpen);
             }}
-            key={picture}
+            key={picture.name}
           >
             <img
               src={`${process.env.PUBLIC_URL}/images/${picture.src}`}
