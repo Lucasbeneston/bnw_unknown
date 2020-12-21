@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $anthracite-grey;
+  background-color: black;
   color: $off-white;
   position: relative;
   z-index: 100;
@@ -92,6 +92,7 @@
     align-items: center;
     margin-right: 5%;
     margin-left: 0;
+    cursor: pointer;
 
     @include media(laptop) {
       margin-right: 0;

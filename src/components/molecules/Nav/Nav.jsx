@@ -1,3 +1,5 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-return-assign */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -8,6 +10,7 @@ import "./Nav.scss";
 
 export default function Nav() {
   const [isFixed, setIsFixed] = useState(false);
+  const [darkroom, setDarkroom] = useState(false);
 
   const fixNav = () => {
     const heightOfNav = document.querySelector(".nav").offsetHeight;
@@ -25,6 +28,20 @@ export default function Nav() {
   useEffect(() => {
     window.addEventListener("scroll", fixNav);
   }, []);
+
+  useEffect(() => {
+    if (darkroom) {
+      document.body.style.backgroundColor = "black";
+      document.querySelectorAll("img").forEach((el) => {
+        el.style.filter = "invert(100%)";
+      });
+    } else {
+      document.body.style.backgroundColor = "#f1f1f1";
+      document
+        .querySelectorAll("img")
+        .forEach((el) => (el.style.filter = "none"));
+    }
+  }, [darkroom]);
 
   return (
     <nav className={`nav ${isFixed ? "fixed" : ""}`}>
@@ -51,10 +68,10 @@ export default function Nav() {
       <div
         className="nav_negative"
         onClick={() => {
-          console.log("Darkroom !");
+          setDarkroom(!darkroom);
         }}
         onKeyDown={() => {
-          console.log("Darkroom !");
+          setDarkroom(!darkroom);
         }}
       >
         <h2>darkroom_experience.</h2> <FilmRoll />
