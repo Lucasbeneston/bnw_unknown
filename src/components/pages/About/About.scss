@@ -1,10 +1,24 @@
+@import "../../_settings/mixins";
+
 .about {
   padding: 5%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @include media(laptop) {
+    padding: 5% 10%;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
 
   &_illustration {
     width: 100%;
     margin-bottom: 40px;
+
+    @include media(laptop) {
+      width: 47.5%;
+    }
 
     & img {
       width: 100%;
@@ -26,44 +40,64 @@
 
   &_informations {
     width: 100%;
-    margin-bottom: 40px;
 
-    &_title {
-      font-size: 1.6rem;
-      font-weight: 600;
-      margin-bottom: 10px;
+    @include media(laptop) {
+      width: 47.5%;
     }
 
-    &_paragraph {
-      font-size: 1.4rem;
-      font-weight: 300;
-      line-height: 2rem;
-    }
-  }
+    &_description {
+      width: 100%;
+      margin-bottom: 40px;
 
-  &_camera {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 40px;
-
-    &_informations {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
-      &_name {
-        font-size: 1.4rem;
+      &_title {
+        font-size: 1.6rem;
         font-weight: 600;
+        margin-bottom: 10px;
+
+        @include media(laptop) {
+          font-size: 2rem;
+        }
       }
 
-      &_date {
-        font-size: 1.2rem;
+      &_paragraph {
+        font-size: 1.4rem;
+        font-weight: 300;
+        line-height: 2rem;
+
+        @include media(laptop) {
+          line-height: 2.5rem;
+        }
+      }
+    }
+
+    &_camera {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      margin-bottom: 40px;
+
+      @include media(laptop) {
+        margin-bottom: 0;
       }
 
-      & img {
-        width: 100px;
+      &_description {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &_name {
+          font-size: 1.4rem;
+          font-weight: 600;
+        }
+
+        &_date {
+          font-size: 1.2rem;
+        }
+
+        & img {
+          width: 100px;
+        }
       }
     }
   }

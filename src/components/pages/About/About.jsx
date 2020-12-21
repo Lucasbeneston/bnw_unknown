@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import "./About.scss";
 
 export default function About() {
+  useEffect(() => {
+    const headerHeight = document.querySelector(".header").offsetHeight;
+    const footerHeight = document.querySelector(".footer").offsetHeight;
+    document.querySelector(".about").style.minHeight = `calc(100vh - (${
+      headerHeight + footerHeight
+    }px))`;
+  }, []);
+
   return (
     <div className="about">
       <div className="about_illustration">
@@ -15,31 +23,50 @@ export default function About() {
           <h3>Remy Donnadieau</h3>
         </div>
       </div>
+
       <div className="about_informations">
-        <h2 className="about_informations_title">about.</h2>
-        <p className="about_informations_paragraph">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-          omnis ea tempore et adipisci obcaecati quaerat, aut numquam voluptate
-          suscipit porro sint. Accusantium quibusdam enim asperiores corporis ut
-          consequatur maxime.
-        </p>
-      </div>
-      <div className="about_camera">
-        <div className="about_camera_informations">
-          <img
-            src={`${process.env.PUBLIC_URL}/images/minolta.png`}
-            alt="Illustration of my camera"
-          />
-          <h3 className="about_camera_informations_name">Minolta XG2</h3>
-          <h4 className="about_camera_informations_date">1977 - 1980</h4>
+        <div className="about_informations_description">
+          <h2 className="about_informations_description_title">about.</h2>
+          <p className="about_informations_description_paragraph">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+            omnis ea tempore et adipisci obcaecati quaerat, aut numquam
+            voluptate suscipit porro sint. Accusantium quibusdam enim asperiores
+            corporis ut consequatur maxime.
+          </p>
+          <br />
+          <p className="about_informations_description_paragraph">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+            omnis ea tempore et adipisci obcaecati quaerat, aut numquam
+            voluptate suscipit porro sint. Accusantium quibusdam enim asperiores
+            corporis ut consequatur maxime.
+          </p>
         </div>
-        <div className="about_camera_informations">
-          <img
-            src={`${process.env.PUBLIC_URL}/images/canon.png`}
-            alt="Illustration of my camera"
-          />
-          <h3 className="about_camera_informations_name">Canon T70</h3>
-          <h4 className="about_camera_informations_date">1984 - 1989</h4>
+
+        <div className="about_informations_camera">
+          <div className="about_informations_camera_description">
+            <img
+              src={`${process.env.PUBLIC_URL}/images/minolta.png`}
+              alt="Illustration of my camera"
+            />
+            <h3 className="about_informations_camera_description_name">
+              Minolta XG2
+            </h3>
+            <h4 className="about_informations_camera_description_date">
+              1977 - 1980
+            </h4>
+          </div>
+          <div className="about_informations_camera_description">
+            <img
+              src={`${process.env.PUBLIC_URL}/images/canon.png`}
+              alt="Illustration of my camera"
+            />
+            <h3 className="about_informations_camera_description_name">
+              Canon T70
+            </h3>
+            <h4 className="about_informations_camera_description_date">
+              1984 - 1989
+            </h4>
+          </div>
         </div>
       </div>
     </div>
