@@ -2,7 +2,7 @@
 /* eslint-disable no-return-assign */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useContext, useState, useEffect } from "react";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link, NavLink } from "react-router-dom";
 import DarkroomContext from "../../../contexts/DarkroomContext";
 import Instagram from "../../atoms/SVGR/Instagram";
 import FilmRoll from "../../atoms/SVGR/FilmRoll";
@@ -60,15 +60,27 @@ export default function Nav() {
         bnw_unknown.
       </Link>
       <div className="nav_containerlinks">
-        <Link className="nav_containerlinks_link" to="/cities">
+        <NavLink
+          className="nav_containerlinks_link"
+          activeClassName="selected"
+          to="/cities"
+        >
           cities.
-        </Link>
-        <Link className="nav_containerlinks_link" to="/portraits">
+        </NavLink>
+        <NavLink
+          className="nav_containerlinks_link"
+          activeClassName="selected"
+          to="/portraits"
+        >
           portraits.
-        </Link>
-        <Link className="nav_containerlinks_link" to="/about">
+        </NavLink>
+        <NavLink
+          className="nav_containerlinks_link"
+          activeClassName="selected"
+          to="/about"
+        >
           about.
-        </Link>
+        </NavLink>
       </div>
       <div
         className="nav_negative"
