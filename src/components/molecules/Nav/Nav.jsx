@@ -1,16 +1,19 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-return-assign */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import React, { useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import DarkroomContext from "../../../contexts/DarkroomContext";
 import Instagram from "../../atoms/SVGR/Instagram";
 import FilmRoll from "../../atoms/SVGR/FilmRoll";
 
 import "./Nav.scss";
 
 export default function Nav() {
+  const context = useContext(DarkroomContext);
+  const { darkroom, setDarkroom } = context;
+
   const [isFixed, setIsFixed] = useState(false);
-  const [darkroom, setDarkroom] = useState(false);
 
   const fixNav = () => {
     const heightOfNav = document.querySelector(".nav").offsetHeight;

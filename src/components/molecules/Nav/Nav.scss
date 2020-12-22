@@ -11,7 +11,6 @@
   color: $off-white;
   position: relative;
   z-index: 100;
-  border-bottom: 2px solid $anthracite-grey;
 
   @include media(laptop) {
     padding: 0 10%;

@@ -1,8 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
+import DarkroomContext from "../../../contexts/DarkroomContext";
 
 import "./About.scss";
 
 export default function About() {
+  const context = useContext(DarkroomContext);
+  const { darkroom } = context;
+
   useEffect(() => {
     const headerHeight = document.querySelector(".header").offsetHeight;
     const footerHeight = document.querySelector(".footer").offsetHeight;
@@ -12,7 +16,7 @@ export default function About() {
   }, []);
 
   return (
-    <div className="about">
+    <div className={`about ${darkroom ? "darkroom" : ""}`}>
       <div className="about_illustration">
         <img
           src={`${process.env.PUBLIC_URL}/images/bnw_unknown_eye.jpg`}
