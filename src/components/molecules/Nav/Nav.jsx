@@ -2,7 +2,7 @@
 /* eslint-disable no-return-assign */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useContext, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import DarkroomContext from "../../../contexts/DarkroomContext";
 import Instagram from "../../atoms/SVGR/Instagram";
 import FilmRoll from "../../atoms/SVGR/FilmRoll";
@@ -11,6 +11,8 @@ import "./Nav.scss";
 
 export default function Nav() {
   const context = useContext(DarkroomContext);
+  const location = useLocation();
+
   const { darkroom, setDarkroom } = context;
 
   const [isFixed, setIsFixed] = useState(false);
@@ -44,7 +46,7 @@ export default function Nav() {
         .querySelectorAll("img")
         .forEach((el) => (el.style.filter = "none"));
     }
-  }, [darkroom]);
+  }, [darkroom, location]);
 
   return (
     <nav className={`nav ${isFixed ? "fixed" : ""}`}>
