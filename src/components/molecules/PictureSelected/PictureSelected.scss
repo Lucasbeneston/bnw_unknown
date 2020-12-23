@@ -3,6 +3,7 @@
 
 .pictureSelected {
   display: none;
+  cursor: none;
 
   &.open {
     display: block;
@@ -26,6 +27,34 @@
     & img {
       max-height: 60vh;
       width: auto;
+      position: relative;
+      z-index: -3;
+    }
+  }
+
+  &_cursor {
+    width: 30px;
+    height: 30px;
+    border: 2px solid $off-white;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: all 0.3s ease;
+    transition-property: transform, border;
+    transform-origin: 100% 100%;
+    z-index: -1;
+    background-color: transparent;
+
+    &.picture-grow {
+      transform: scale(5);
+      border: 0;
+      backdrop-filter: invert(100%);
+    }
+
+    &.button-grow {
+      transform: scale(2);
+      border: 1px solid $off-white;
     }
   }
 
@@ -72,6 +101,6 @@
     border: none;
     outline: none;
     border-bottom: 1px solid $off-white;
-    cursor: pointer;
+    cursor: none;
   }
 }

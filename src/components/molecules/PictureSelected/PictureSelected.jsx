@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import Camera from "../../atoms/SVGR/Camera";
 
@@ -14,8 +14,39 @@ export default function PictureSelected({
   selectedImagCamera,
   onClickEvent,
 }) {
+  useEffect(() => {
+    const mouseCursor = document.querySelector(".pictureSelected_cursor");
+    const buttonClose = document.querySelector(".pictureSelected_closeButton");
+    const pictureSelected = document.querySelector(".pictureSelected figure");
+
+    function cursor(e) {
+      mouseCursor.style.top = `${e.pageY}px`;
+      mouseCursor.style.left = `${e.pageX}px`;
+    }
+
+    window.addEventListener("mousemove", cursor);
+
+    // If more button, quareySelectoAll + foreach
+    buttonClose.addEventListener("mouseleave", () => {
+      mouseCursor.classList.remove("button-grow");
+    });
+
+    buttonClose.addEventListener("mouseover", () => {
+      mouseCursor.classList.add("button-grow");
+    });
+
+    pictureSelected.addEventListener("mouseleave", () => {
+      mouseCursor.classList.remove("picture-grow");
+    });
+
+    pictureSelected.addEventListener("mouseover", () => {
+      mouseCursor.classList.add("picture-grow");
+    });
+  }, [isOpenState]);
+
   return (
     <div className={`pictureSelected ${isOpenState ? "open" : ""}`}>
+      <div className="pictureSelected_cursor" />
       <figure>
         <img
           src={`${process.env.PUBLIC_URL}/images/${selectedImageSrc}`}
@@ -49,7 +80,7 @@ PictureSelected.propTypes = {
   onClickEvent: PropTypes.func.isRequired,
   isOpenState: PropTypes.bool.isRequired,
   selectedImageSrc: PropTypes.string.isRequired,
-  selectedImageState: PropTypes.string.isRequired,
+  selectedImageState: PropTypes.objectOf.isRequired,
   selectedImageName: PropTypes.string.isRequired,
   selectedImageDate: PropTypes.string.isRequired,
   selectedImageLocation: PropTypes.string.isRequired,
