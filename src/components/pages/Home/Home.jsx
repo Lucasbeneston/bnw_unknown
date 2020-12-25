@@ -33,6 +33,7 @@ export default function Home() {
       <div className="home_container">
         {allPictures.map((picture, index) => (
           <Picture
+            key={picture.src}
             onClickEvent={() => {
               setSelectedImage({
                 src: picture.src,

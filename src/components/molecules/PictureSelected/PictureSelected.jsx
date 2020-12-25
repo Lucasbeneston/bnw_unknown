@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import Camera from "../../atoms/SVGR/Camera";
 
@@ -14,29 +14,14 @@ export default function PictureSelected({
   selectedImagCamera,
   onClickEvent,
 }) {
-  useEffect(() => {
-    const mouseCursor = document.querySelector(".pictureSelected_cursor");
-    const pictureSelected = document.querySelector(".pictureSelected figure");
-
-    function cursor(e) {
-      mouseCursor.style.top = `${e.clientY}px`;
-      mouseCursor.style.left = `${e.clientX}px`;
-    }
-
-    window.addEventListener("mousemove", cursor);
-
-    pictureSelected.addEventListener("mouseleave", () => {
-      mouseCursor.classList.remove("picture-grow");
-    });
-
-    pictureSelected.addEventListener("mouseover", () => {
-      mouseCursor.classList.add("picture-grow");
-    });
-  }, [isOpenState]);
-
   return (
-    <div className={`pictureSelected ${isOpenState ? "open" : ""}`}>
-      <div className="pictureSelected_cursor" />
+    <div
+      className={`pictureSelected ${isOpenState ? "open" : ""}`}
+      onClick={onClickEvent}
+      onKeyDown={onClickEvent}
+      role="button"
+      tabIndex={0}
+    >
       <figure>
         <img
           src={`${process.env.PUBLIC_URL}/images/${selectedImageSrc}`}
@@ -66,13 +51,22 @@ export default function PictureSelected({
   );
 }
 
+PictureSelected.defaultProps = {
+  selectedImageSrc: null,
+  selectedImageState: null,
+  selectedImageName: null,
+  selectedImageDate: null,
+  selectedImageLocation: null,
+  selectedImagCamera: null,
+};
+
 PictureSelected.propTypes = {
   onClickEvent: PropTypes.func.isRequired,
   isOpenState: PropTypes.bool.isRequired,
-  selectedImageSrc: PropTypes.string.isRequired,
-  selectedImageState: PropTypes.objectOf.isRequired,
-  selectedImageName: PropTypes.string.isRequired,
-  selectedImageDate: PropTypes.string.isRequired,
-  selectedImageLocation: PropTypes.string.isRequired,
-  selectedImagCamera: PropTypes.string.isRequired,
+  selectedImageSrc: PropTypes.string,
+  selectedImageState: PropTypes.objectOf(PropTypes.any),
+  selectedImageName: PropTypes.string,
+  selectedImageDate: PropTypes.string,
+  selectedImageLocation: PropTypes.string,
+  selectedImagCamera: PropTypes.string,
 };

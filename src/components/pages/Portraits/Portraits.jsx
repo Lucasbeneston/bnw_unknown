@@ -33,6 +33,7 @@ export default function Cities() {
       <div className="portraits_container">
         {portraitsPictures.map((picture, index) => (
           <Picture
+            key={picture.src}
             onClickEvent={() => {
               setSelectedImage({
                 src: picture.src,
