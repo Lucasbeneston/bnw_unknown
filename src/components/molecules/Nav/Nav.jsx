@@ -82,7 +82,8 @@ export default function Nav() {
           about.
         </NavLink>
       </div>
-      <div
+      <button
+        type="button"
         className="nav_negative"
         onClick={() => {
           setDarkroom(!darkroom);
@@ -93,7 +94,7 @@ export default function Nav() {
       >
         <h2>darkroom_experience.</h2>
         <FilmRoll />
-      </div>
+      </button>
     </nav>
   );
 }

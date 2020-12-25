@@ -1,0 +1,42 @@
+@import "../../_settings/variables";
+
+.cursor {
+  width: 30px;
+  height: 30px;
+  border: 2px;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  transition-property: transform, border, background-color, transform-origin;
+  transform-origin: 100% 100%;
+  background-color: transparent;
+  z-index: 151;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-color: #646464;
+
+  &.buttonLinks-grow {
+    transform: scale(2);
+    border-color: #646464;
+    border-width: 1px !important;
+    border-style: solid;
+  }
+
+  &.inverte {
+    transform: scale(5);
+    border: 0 !important;
+    backdrop-filter: invert(100%);
+    -webkit-backdrop-filter: invert(100%);
+    background-color: transparent !important;
+    transform-origin: 62% 62% !important;
+  }
+
+  &_icon {
+    color: rgba(255, 255, 255, 0.75);
+    width: 40%;
+    height: 40%;
+  }
+}

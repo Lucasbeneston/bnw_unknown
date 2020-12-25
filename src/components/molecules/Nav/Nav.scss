@@ -92,7 +92,11 @@
     align-items: center;
     margin-right: 5%;
     margin-left: 0;
-    cursor: pointer;
+    background-color: transparent;
+    color: $off-white;
+    border: none;
+    text-align: right;
+    outline: none;
 
     @include media(laptop) {
       margin-right: 0;

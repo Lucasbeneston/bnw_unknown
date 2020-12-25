@@ -32,7 +32,6 @@
     & figure {
       margin: 0;
       margin-bottom: 10px;
-      cursor: pointer;
       transition: opacity 0.25s;
 
       @include media(tablet) {

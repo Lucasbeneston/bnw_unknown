@@ -16,7 +16,6 @@ export default function PictureSelected({
 }) {
   useEffect(() => {
     const mouseCursor = document.querySelector(".pictureSelected_cursor");
-    const buttonClose = document.querySelector(".pictureSelected_closeButton");
     const pictureSelected = document.querySelector(".pictureSelected figure");
 
     function cursor(e) {
@@ -25,15 +24,6 @@ export default function PictureSelected({
     }
 
     window.addEventListener("mousemove", cursor);
-
-    // If more button, quareySelectoAll + foreach
-    buttonClose.addEventListener("mouseleave", () => {
-      mouseCursor.classList.remove("button-grow");
-    });
-
-    buttonClose.addEventListener("mouseover", () => {
-      mouseCursor.classList.add("button-grow");
-    });
 
     pictureSelected.addEventListener("mouseleave", () => {
       mouseCursor.classList.remove("picture-grow");
