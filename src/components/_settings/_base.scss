@@ -16,7 +16,7 @@ body {
   font-size: 1.4rem;
   transition: background-color 0.5s ease-in-out;
   cursor: none !important;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 
   & a,
   & button {
