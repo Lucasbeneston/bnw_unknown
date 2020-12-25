@@ -1,6 +1,6 @@
 const portraitsPictures = [
   {
-    src: "portraits/Sherilyn.JPG",
+    src: "portraits/Sherilyn.jpg",
     name: "Sherilyn",
     location: "Quai de Seine (Paris, France)",
     date: "Sept. 2019",
@@ -22,7 +22,7 @@ const portraitsPictures = [
     camera: "Canon T70",
   },
   {
-    src: "portraits/Loan.jpg",
+    src: "portraits/Loan.JPG",
     name: "Loan",
     location: "Quai de Seine (Paris, France)",
     date: "Sept. 2019",
