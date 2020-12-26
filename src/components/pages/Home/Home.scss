@@ -24,9 +24,11 @@
       column-count: 4;
     }
 
-    &:hover > *:not(:hover) {
-      opacity: 0.45;
-      transition: opacity 0.25s;
+    @media (hover: hover) {
+      &:hover > *:not(:hover) {
+        opacity: 0.45;
+        transition: opacity 0.25s;
+      }
     }
 
     & figure {
