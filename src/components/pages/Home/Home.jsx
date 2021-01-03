@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import allPictures from "../../../data/allPictures";
+import citiesPictures from "../../../data/citiesPictures";
 import Picture from "../../molecules/Picture/Picture";
 import PictureSelected from "../../molecules/PictureSelected/PictureSelected";
 
@@ -31,7 +31,7 @@ export default function Home() {
         }}
       />
       <div className="home_container">
-        {allPictures.map((picture, index) => (
+        {citiesPictures.map((picture, index) => (
           <Picture
             key={picture.src}
             onClickEvent={() => {

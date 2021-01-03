@@ -32,17 +32,31 @@ export default function About() {
         <div className="about_informations_description">
           <h2 className="about_informations_description_title">about.</h2>
           <p className="about_informations_description_paragraph">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-            omnis ea tempore et adipisci obcaecati quaerat, aut numquam
-            voluptate suscipit porro sint. Accusantium quibusdam enim asperiores
-            corporis ut consequatur maxime.
+            Hi, my name is Lucas, I'm a front-end web developer and photographer
+            in my spare time! What I like is to walk for hours in the cities to
+            take pictures of life moments. Most of the people in my pictures are
+            unknown people from the back and alone, because I like to bring a
+            part of mystery. When I look at my pictures, I always wonder who
+            this person is, what their face looks like, what they are doing,
+            etc. I like to bring a bit of mystery to the picture. 
           </p>
           <br />
           <p className="about_informations_description_paragraph">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-            omnis ea tempore et adipisci obcaecati quaerat, aut numquam
-            voluptate suscipit porro sint. Accusantium quibusdam enim asperiores
-            corporis ut consequatur maxime.
+            I started photography in 2018 when my grandparents gave me a Canon
+            T70 (1984). It was with this camera that I took a series of photos
+            in New York, a city that I particularly appreciate for the energy it
+            gives off. Today, most of my photos are taken with a Minolta XG2
+            (1977), which a friend gave me. Soon, I would like to do a series of
+            portraits of my friends, but also of strangers.
+          </p>
+          <br />
+          <p className="about_informations_description_paragraph">
+            What I like about film photography is that I don't know the result
+            of my shots before I print them, and it makes me feel like I'm
+            reliving every moment. If I chose black and white, it's because I
+            like the contrast between light and shadow, but also because I think
+            it adds a bit of mystery to my photos and stimulates the imagination
+            a little more. 
           </p>
         </div>
 
